@@ -1,0 +1,10 @@
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\bin\Debug\netstandard2.0\GvasFormat.deps.json
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\bin\Debug\netstandard2.0\GvasFormat.dll
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\bin\Debug\netstandard2.0\GvasFormat.pdb
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\obj\Debug\netstandard2.0\GvasFormat.csproj.AssemblyReference.cache
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\obj\Debug\netstandard2.0\GvasFormat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\obj\Debug\netstandard2.0\GvasFormat.AssemblyInfoInputs.cache
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\obj\Debug\netstandard2.0\GvasFormat.AssemblyInfo.cs
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\obj\Debug\netstandard2.0\GvasFormat.csproj.CoreCompileInputs.cache
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\obj\Debug\netstandard2.0\GvasFormat.dll
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasFormat\obj\Debug\netstandard2.0\GvasFormat.pdb

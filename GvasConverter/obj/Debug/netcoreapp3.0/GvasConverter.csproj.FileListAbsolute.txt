@@ -1,0 +1,13 @@
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Debug\netcoreapp3.0\GvasConverter.deps.json
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Debug\netcoreapp3.0\GvasConverter.dll
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Debug\netcoreapp3.0\GvasConverter.pdb
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Debug\netcoreapp3.0\GvasFormat.dll
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Debug\netcoreapp3.0\GvasFormat.pdb
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\obj\Debug\netcoreapp3.0\GvasConverter.csproj.AssemblyReference.cache
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\obj\Debug\netcoreapp3.0\GvasConverter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\obj\Debug\netcoreapp3.0\GvasConverter.AssemblyInfoInputs.cache
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\obj\Debug\netcoreapp3.0\GvasConverter.AssemblyInfo.cs
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\obj\Debug\netcoreapp3.0\GvasConverter.csproj.CoreCompileInputs.cache
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\obj\Debug\netcoreapp3.0\GvasConverter.csproj.CopyComplete
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\obj\Debug\netcoreapp3.0\GvasConverter.dll
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\obj\Debug\netcoreapp3.0\GvasConverter.pdb

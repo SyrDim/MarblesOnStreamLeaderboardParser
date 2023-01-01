@@ -1,0 +1,8 @@
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Release\net6.0\publish\GvasConverter.exe
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Release\net6.0\publish\GvasConverter.dll
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Release\net6.0\publish\GvasConverter.deps.json
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Release\net6.0\publish\GvasConverter.runtimeconfig.json
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Release\net6.0\publish\GvasConverter.pdb
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Release\net6.0\publish\Newtonsoft.Json.dll
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Release\net6.0\publish\GvasFormat.dll
+C:\Users\PC\Downloads\New folder\gvas-converter-master\GvasConverter\bin\Release\net6.0\publish\GvasFormat.pdb

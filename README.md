@@ -24,6 +24,7 @@ TlM0RR+LCAAAAAAABADtWFuTokgWfp+I+Q+19TxUJBcFJmIeLKtVrGq71PLGMg9JZoKUCclwUbGj//se
 6. In Sub-Actions set %save% argument value, in both Initializer and PointAlloc, to the full path of "your_session_name".sav in AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions. (Make sure that it's not surrounded by "")
 
 For Example:
+
 Wrong: "C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\mysession.sav"
 Correct: C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\mysession.sav
 

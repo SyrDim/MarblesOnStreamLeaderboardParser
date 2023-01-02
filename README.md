@@ -26,6 +26,7 @@ TlM0RR+LCAAAAAAABADtWFuTokgWfp+I+Q+19TxUJBcFJmIeLKtVrGq71PLGMg9JZoKUCclwUbGj//se
 For Example:
 
 Wrong: "C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\mysession.sav"
+
 Correct: C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\mysession.sav
 
 7. Set %converter% argument, in both Initializer and PointAlloc, to the full path of GvasConverter.exe file from the corverter.rar that you downloaded. (Make sure that it's not surrounded by "")

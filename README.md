@@ -21,9 +21,13 @@ TlM0RR+LCAAAAAAABADtWFuTokgWfp+I+Q+19TxUJBcFJmIeLKtVrGq71PLGMg9JZoKUCclwUbGj//se
 ```
 5. Go to Settings and then File/Folder Watcher add folder by clicking on the "..." and find "AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions", Filter to "your_session_name".sav file and Action to PointAlloc.
 
-6. In Sub-Actions set %save% argument value, in both Initializer and PointAlloc, to the full path of "your_session_name".sav in AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions. (Make sure that it's not surronded by "")
+6. In Sub-Actions set %save% argument value, in both Initializer and PointAlloc, to the full path of "your_session_name".sav in AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions. (Make sure that it's not surrounded by "")
 
-7. Set %converter% argument, in both Initializer and PointAlloc, to the full path of GvasConverter.exe file. (Make sure that it's not in "")
+For Example:
+Wrong: "C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\mysession.sav"
+Correct: C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\mysession.sav
+
+7. Set %converter% argument, in both Initializer and PointAlloc, to the full path of GvasConverter.exe file from the corverter.rar that you downloaded. (Make sure that it's not surrounded by "")
 
 8. Edit execute code, in both Initializer and PointAlloc, and add System.dll in the References tab at the bottom, if it's not already, and compile to see if there are any errors.
 

@@ -5,7 +5,7 @@ It is used in conjuction with https://streamer.bot/ and StreamElements to automa
 
 The way it is set now, 1st place gets 1000 points, 2nd place 700 and 3rd place 500.
 
-Unfortunately, the code is not very flexible, so if you want to have different values you need to edit and compile it yourself.
+Unfortunately, the code is not very flexible, so if you want to have different values you need to edit and compile it yourself. The executable code is in GvasConverter\Program.cs
 
 ## How to use <br/>
 

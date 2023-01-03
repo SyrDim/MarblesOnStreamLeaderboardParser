@@ -55,37 +55,42 @@ namespace GvasConverter
 
                 if (data != null)
                 {
-                    //Count the amount of players
-                    foreach (var pro1 in data.Properties[0].Properties[0].Items)
+                    if (!string.IsNullOrEmpty(Convert.ToString(data.Properties[0].Properties[0].Items)))
                     {
-                        players++;
-                    }
-
-                    //format and fill dataObjects with only the necessary info from json
-                    foreach (var pro1 in data.Properties[0].Properties[0].Items)
-                    {
-                        var dataObject = new ExpandoObject() as IDictionary<string, object>;
-                        int i = -1;
-                        foreach (var prop2 in pro1.Properties)
+                        //Count the amount of players
+                        foreach (var pro1 in data.Properties[0].Properties[0].Items)
                         {
-                            i++;
-                            ok = prop2["Value"];
-                            nm = prop2["Name"];
-                            if (i == 3 || ok == null)   //ignore properties with no value and "_SeasonPoints"
-                                continue;
-                            dataObject.Add(nm, ok);
+                            players++;
                         }
-                        dataObjects.Add(dataObject);
+
+                        //format and fill dataObjects with only the necessary info from json
+                        foreach (var pro1 in data.Properties[0].Properties[0].Items)
+                        {
+                            var dataObject = new ExpandoObject() as IDictionary<string, object>;
+                            int i = -1;
+                            foreach (var prop2 in pro1.Properties)
+                            {
+                                i++;
+                                ok = prop2["Value"];
+                                nm = prop2["Name"];
+                                if (i == 3 || ok == null)   //ignore properties with no value and "_SeasonPoints"
+                                    continue;
+                                dataObject.Add(nm, ok);
+                            }
+                            dataObjects.Add(dataObject);
+                        }
+
+                        //format dataObjects to json and write to file
+                        var jsonString = System.Text.Json.JsonSerializer.Serialize(dataObjects, new JsonSerializerOptions()
+                        {
+                            WriteIndented = true
+                        });
+                        File.WriteAllText(formatedfile, jsonString);
                     }
-
-                    //format dataObjects to json and write to file
-                    var jsonString = System.Text.Json.JsonSerializer.Serialize(dataObjects, new JsonSerializerOptions()
+                    else
                     {
-                        WriteIndented = true
-                    });
-                    File.WriteAllText(formatedfile, jsonString);
-
-                    var data2 = JsonConvert.DeserializeObject<dynamic>(jsonString);
+                        File.WriteAllText(formatedfile, "empty");
+                    }
                 }
             }
             else
@@ -107,68 +112,47 @@ namespace GvasConverter
                 List<object> dataObjects = new();
 
                 var data = JsonConvert.DeserializeObject<dynamic>(result);
-                var newdata = JsonConvert.DeserializeObject<dynamic>(newresult);
-
+                
                 if (data != null)
                 {
-                    if (newdata != null)
+                    if (newresult == "empty")
                     {
-                        //Count the old player file
-                        foreach (var pro1 in newdata)
+                        if (!string.IsNullOrEmpty(Convert.ToString(data.Properties[0].Properties[0].Items)))
                         {
-                            newplayers++;
-                        }
-                        //Count the updated player file
-                        foreach (var pro1 in data.Properties[0].Properties[0].Items)
-                        {
-                            players++;
-                        }
-
-                        //format and fill dataObjects with only the necessary info from updated json
-                        foreach (var pro1 in data.Properties[0].Properties[0].Items)
-                        {
-                            var dataObject = new ExpandoObject() as IDictionary<string, object>;
-                            int i = -1;
-                            foreach (var prop2 in pro1.Properties)
+                            //Count the updated player file
+                            foreach (var pro1 in data.Properties[0].Properties[0].Items)
                             {
-                                i++;
-                                ok = prop2["Value"];
-                                nm = prop2["Name"];
-                                if (i == 3 || ok == null)   //ignore properties with no value and "_SeasonPoints"
-                                    continue;
-                                dataObject.Add(nm, ok);
+                                players++;
                             }
-                            dataObjects.Add(dataObject);
-                        }
 
-                        //format dataObjects to json and update old file
-                        var jsonString = System.Text.Json.JsonSerializer.Serialize(dataObjects, new JsonSerializerOptions()
-                        {
-                            WriteIndented = true
-                        });
-                        File.WriteAllText(formatedfile, jsonString);
-
-                        var data2 = JsonConvert.DeserializeObject<dynamic>(jsonString);
-                        if (data2 != null)
-                        {
-                            //check if new players added and check first 3 places
-                            if (newplayers < players)
+                            //format and fill dataObjects with only the necessary info from updated json
+                            foreach (var pro1 in data.Properties[0].Properties[0].Items)
                             {
-                                for (int i = 0; i < newplayers; i++)
+                                var dataObject = new ExpandoObject() as IDictionary<string, object>;
+                                int i = -1;
+                                foreach (var prop2 in pro1.Properties)
                                 {
-                                    if (data2[i]._Points != newdata[i]._Points)
-                                    {
-                                        int bef = Convert.ToInt32(data2[i]._Points);
-                                        int after = Convert.ToInt32(newdata[i]._Points);
-                                        if (bef - after == 3)
-                                            winner = data2[i]._DisplayName;
-                                        else if (bef - after == 2)
-                                            second = data2[i]._DisplayName;
-                                        else if (bef - after == 1)
-                                            third = data2[i]._DisplayName;
-                                    }
+                                    i++;
+                                    ok = prop2["Value"];
+                                    nm = prop2["Name"];
+                                    if (i == 3 || ok == null)   //ignore properties with no value and "_SeasonPoints"
+                                        continue;
+                                    dataObject.Add(nm, ok);
                                 }
-                                for (int i = newplayers; i < players; i++)
+                                dataObjects.Add(dataObject);
+                            }
+
+                            //format dataObjects to json and update old file
+                            var jsonString = System.Text.Json.JsonSerializer.Serialize(dataObjects, new JsonSerializerOptions()
+                            {
+                                WriteIndented = true
+                            });
+                            File.WriteAllText(formatedfile, jsonString);
+
+                            var data2 = JsonConvert.DeserializeObject<dynamic>(jsonString);
+                            if (data2 != null)
+                            {
+                                for (int i = 0; i < players; i++)
                                 {
                                     if (data2[i]._Points == 3)
                                         winner = data2[i]._DisplayName;
@@ -178,40 +162,129 @@ namespace GvasConverter
                                         third = data2[i]._DisplayName;
                                 }
                             }
-                            //check first 3 places
-                            else
+                            string winners = "";
+                            if (winner != "")
+                                winners = winners + "!addpoints " + winner + " 1000";
+                            if (second != "")
+                                winners = winners + "\n!addpoints " + second + " 700";
+                            if (third != "")
+                                winners = winners + "\n!addpoints " + third + " 500";
+
+                            //Check if file is empty
+                            if (winners != "")
                             {
-                                for (int i = 0; i < players; i++)
+                                var exte = Path.GetDirectoryName(formatedfile);
+                                exte += @"\winners.txt";
+                                File.WriteAllText(exte, winners);
+                                Path.GetDirectoryName(formatedfile);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var newdata = JsonConvert.DeserializeObject<dynamic>(newresult);
+                        if (newdata != null)
+                        {
+                            //Count the old player file
+                            foreach (var pro1 in newdata)
+                            {
+                                newplayers++;
+                            }
+                            //Count the updated player file
+                            foreach (var pro1 in data.Properties[0].Properties[0].Items)
+                            {
+                                players++;
+                            }
+
+                            //format and fill dataObjects with only the necessary info from updated json
+                            foreach (var pro1 in data.Properties[0].Properties[0].Items)
+                            {
+                                var dataObject = new ExpandoObject() as IDictionary<string, object>;
+                                int i = -1;
+                                foreach (var prop2 in pro1.Properties)
                                 {
-                                    if (data2[i]._Points != newdata[i]._Points)
+                                    i++;
+                                    ok = prop2["Value"];
+                                    nm = prop2["Name"];
+                                    if (i == 3 || ok == null)   //ignore properties with no value and "_SeasonPoints"
+                                        continue;
+                                    dataObject.Add(nm, ok);
+                                }
+                                dataObjects.Add(dataObject);
+                            }
+
+                            //format dataObjects to json and update old file
+                            var jsonString = System.Text.Json.JsonSerializer.Serialize(dataObjects, new JsonSerializerOptions()
+                            {
+                                WriteIndented = true
+                            });
+                            File.WriteAllText(formatedfile, jsonString);
+
+                            var data2 = JsonConvert.DeserializeObject<dynamic>(jsonString);
+                            if (data2 != null)
+                            {
+                                //check if new players added and check first 3 places
+                                if (newplayers < players)
+                                {
+                                    for (int i = 0; i < newplayers; i++)
                                     {
-                                        int bef = Convert.ToInt32(data2[i]._Points);
-                                        int after = Convert.ToInt32(newdata[i]._Points);
-                                        if (bef - after == 3)
+                                        if (data2[i]._Points != newdata[i]._Points)
+                                        {
+                                            int bef = Convert.ToInt32(data2[i]._Points);
+                                            int after = Convert.ToInt32(newdata[i]._Points);
+                                            if (bef - after == 3)
+                                                winner = data2[i]._DisplayName;
+                                            else if (bef - after == 2)
+                                                second = data2[i]._DisplayName;
+                                            else if (bef - after == 1)
+                                                third = data2[i]._DisplayName;
+                                        }
+                                    }
+                                    for (int i = newplayers; i < players; i++)
+                                    {
+                                        if (data2[i]._Points == 3)
                                             winner = data2[i]._DisplayName;
-                                        else if (bef - after == 2)
+                                        else if (data2[i]._Points == 2)
                                             second = data2[i]._DisplayName;
-                                        else if (bef - after == 1)
+                                        else if (data2[i]._Points == 1)
                                             third = data2[i]._DisplayName;
                                     }
                                 }
+                                //check first 3 places
+                                else
+                                {
+                                    for (int i = 0; i < players; i++)
+                                    {
+                                        if (data2[i]._Points != newdata[i]._Points)
+                                        {
+                                            int bef = Convert.ToInt32(data2[i]._Points);
+                                            int after = Convert.ToInt32(newdata[i]._Points);
+                                            if (bef - after == 3)
+                                                winner = data2[i]._DisplayName;
+                                            else if (bef - after == 2)
+                                                second = data2[i]._DisplayName;
+                                            else if (bef - after == 1)
+                                                third = data2[i]._DisplayName;
+                                        }
+                                    }
+                                }
                             }
-                        }
-                        string winners = "";
-                        if (winner != "")
-                            winners = winners + "!addpoints " + winner + " 1000";
-                        if (second != "")
-                            winners = winners + "\n!addpoints " + second + " 700";
-                        if (third != "")
-                            winners = winners + "\n!addpoints " + third + " 500";
+                            string winners = "";
+                            if (winner != "")
+                                winners = winners + "!addpoints " + winner + " 1000";
+                            if (second != "")
+                                winners = winners + "\n!addpoints " + second + " 700";
+                            if (third != "")
+                                winners = winners + "\n!addpoints " + third + " 500";
 
-                        //Check if file is empty
-                        if (winners != "")
-                        {
-                            var exte = Path.GetDirectoryName(formatedfile);
-                            exte += @"\winners.txt";
-                            File.WriteAllText(exte, winners);
-                            Path.GetDirectoryName(formatedfile);
+                            //Check if file is empty
+                            if (winners != "")
+                            {
+                                var exte = Path.GetDirectoryName(formatedfile);
+                                exte += @"\winners.txt";
+                                File.WriteAllText(exte, winners);
+                                Path.GetDirectoryName(formatedfile);
+                            }
                         }
                     }
                 }

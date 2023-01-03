@@ -35,7 +35,7 @@ Correct: C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\myse
 
 9. In commands, enable !manualinit if it's disabled.
 
-10. Initialize once by typing !manualinit command in twitch chat. (This should create 2 extra files in "AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions", a .json and a .txt, unless your session/leaderboard is empty in which case there should only be a .json)
+10. Initialize once by typing !manualinit in twitch chat. (This should create 2 extra files in "AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions", a .json and a .txt, unless your session/leaderboard is empty in which case there should only be a .json)
 
 11. There should now be 2 extra files in "AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions", a .json and a .txt, unless your session/leaderboard is empty in which case there should only be a .json. If that happens you should do a test race with at least one participant so that the .txt file gets created. During that, there won't be any points allocated.
 

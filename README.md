@@ -11,7 +11,7 @@ Unfortunately, the code is not very flexible, so if you want to have different v
 
 1. In Marbles On Stream, go to LEADERBOARD, select LOCAL and create a new session with any name or use an existing session.
 
-2. Go to settings, check "USE CUSTOM POINTS" and assign 1st place 3 points, 2nd place 2 points and 3rd place 1 point. (Make sure "Participation Points" is 0)
+2. Go to SETTINGS, check "USE CUSTOM POINTS" and assign 1st place 3 points, 2nd place 2 points and 3rd place 1 point. (Make sure "Participation Points" is 0)
 
 Example below:
 

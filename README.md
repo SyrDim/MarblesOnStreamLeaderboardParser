@@ -35,7 +35,7 @@ Correct: `C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\mys
 
 7. Set `%converter%` argument, in both Initializer and PointAlloc, to the full path of GvasConverter.exe file from the Converter.zip that you downloaded. (Make sure that it's not surrounded by "")
 
-8. Edit "execute code", in both Initializer and PointAlloc, and add `System.dll` in the References tab at the bottom, if it's not already, and compile to see if there are any errors.
+8. Edit "execute code", in both Initializer and PointAlloc, and add System.dll in the References tab at the bottom, if it's not already, and compile to see if there are any errors.
 
 9. In commands, enable !manualinit if it's disabled.
 

@@ -25,7 +25,7 @@ TlM0RR+LCAAAAAAABADtWFtv47YSfi/Q/5DmuQqom2UV6IPjbGw5iTe+26r6QJGUrDUl6uhiW17sfz8j
 ```
 5. Go to Settings and then File/Folder Watcher add folder by clicking on the ... and find `AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions`, Filter to `"your_session_name".sav` file and Action to PointAlloc.
 
-6. In Sub-Actions set `%save%` argument value, in both Initializer and PointAlloc, to the full path of `"your_session_name".sav` in `AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions`. (Make sure that it's not surrounded by "")
+6. In Sub-Actions set `%save%` argument value, in both Initializer and PointAlloc, to the full path of `"your_session_name".sav` in `AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions`. Make sure that it's not surrounded by "".
 
 For Example:
 

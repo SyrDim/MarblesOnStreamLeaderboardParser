@@ -1,5 +1,5 @@
 # Marbles On Stream local leaderboard parser
-This uses the gvas-converter library from https://github.com/13xforever/gvas-converter.
+This code uses the gvas-converter library from https://github.com/13xforever/gvas-converter.
 
 It is used in conjuction with https://streamer.bot/ and StreamElements to automatically execute the !addpoints command for the top 3 participants in each race.
 

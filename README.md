@@ -41,4 +41,4 @@ Correct: `C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\mys
 
 10. Initialize once by typing !manualinit in twitch chat. (This should create 2 extra files in `AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions`, a .json and a .txt)
 
-After this, it should update automatically every time a race ends and it will assign the appropriate points to the chat member by type the commands.
+After this, it should update automatically every time a race ends and the appropriate points will be assigned to the chat members.

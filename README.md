@@ -15,7 +15,7 @@ Unfortunately, the code is not very flexible, so if you want to have different v
 
 Example below:
 
-❮img src="custompointsettings.png"❯
+<img src="custompointsettings.png">
 
 3. After that there should a .sav file in "AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions" with the name of the session that you made.
 

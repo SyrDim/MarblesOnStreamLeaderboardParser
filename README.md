@@ -33,7 +33,7 @@ Wrong: `"C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\myse
 
 Correct: `C:\Users\PC\AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions\mysession.sav`
 
-7. Set `%converter%` argument, in both Initializer and PointAlloc, to the full path of GvasConverter.exe file from the Converter.zip that you downloaded. (Make sure that it's not surrounded by "")
+7. Set `%converter%` argument, in both Initializer and PointAlloc, to the full path of GvasConverter.exe file from the [Converter.zip](https://github.com/SyrDim/MarblesOnStreamLeaderboardParser/releases) that you downloaded. (Make sure that it's not surrounded by "")
 
 8. Edit "execute code", in both Initializer and PointAlloc, and add System.dll in the References tab at the bottom, if it's not already, and compile to see if there are any errors.
 

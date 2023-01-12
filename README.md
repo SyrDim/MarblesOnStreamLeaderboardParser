@@ -9,7 +9,7 @@ Unfortunately, the code is not very flexible, so if you want to have different v
 
 ## How to use <br/>
 
-1. In Marbles On Stream, go to leaderboard, select local and create a new session with any name or use an existing one.
+1. In Marbles On Stream, go to LEADERBOARD, select LOCAL and create a new session with any name or use an existing one.
 
 2. Go to settings, check "use custom points" and assign 1st place 3 points, 2nd place 2 points and 3rd place 1 point. (Make sure "Participation Points" is 0)
 

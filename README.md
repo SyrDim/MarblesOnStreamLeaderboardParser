@@ -17,7 +17,7 @@ Example below:
 
 <img src="custompointsettings.png">
 
-3. After that there should a .sav file in `AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions` with the name of the session that you made.
+3. After that, there should a .sav file in `AppData\Local\MarblesOnStream\Saved\SaveGames\Sessions` with the name of the session that you made.
 
 4. In Streamer.bot import:
 ```
